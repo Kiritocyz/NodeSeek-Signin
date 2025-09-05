@@ -1,6 +1,9 @@
 name: NodeLoc 自动签到
 
 on:
+  push:
+    paths:
+      - 'nodeloc.py'
   schedule:
     # 每天 08:00 UTC 运行（即北京时间 16:00）
     - cron: '0 8 * * *'
