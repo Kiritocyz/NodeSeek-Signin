@@ -393,7 +393,7 @@ if __name__ == "__main__":
             break
     
     # 读取现有Cookie
-    all_cookies = os.getenv("DP_COOKIE", "")
+    all_cookies = os.getenv("DF_COOKIE", "")
     cookie_list = all_cookies.split("&")
     cookie_list = [c.strip() for c in cookie_list if c.strip()]
     
@@ -493,7 +493,7 @@ if __name__ == "__main__":
         print("\n==== 处理完毕，保存更新后的Cookie ====")
         all_cookies_new = "&".join([c for c in cookie_list if c.strip()])
         try:
-            save_cookie("DP_COOKIE", all_cookies_new)
+            save_cookie("DF_COOKIE", all_cookies_new)
             print("所有Cookie已成功保存")
         except Exception as e:
             print(f"保存Cookie变量异常: {e}")
