@@ -13,7 +13,7 @@ permissions:
   actions: write  # 添加写入Actions变量的权限
 
 jobs:
-  run-nodeseek-sign:
+  run-ns_fd-sign:
     runs-on: ubuntu-latest
 
     steps:
@@ -29,7 +29,7 @@ jobs:
         run: |
           pip install curl_cffi requests
 
-      - name: 运行签到脚本
+      - name: 运行NS签到脚本
         env:
           # 基本账号
           USER: ${{ secrets.USER }}
@@ -64,6 +64,7 @@ jobs:
           TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
           TG_USER_ID: ${{ secrets.TG_USER_ID }}
           TG_THREAD_ID: ${{ secrets.TG_THREAD_ID }}
-        run: 
-          python nodeseek_sign.py
-          python deepflood_sign.py
+        run: python nodeseek_sign.py
+      - name: 运行FD签到脚本
+        run: python deepflood_sign.py
+        
