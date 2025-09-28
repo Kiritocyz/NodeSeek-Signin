@@ -64,6 +64,6 @@ jobs:
 
       - name: 运行NS签到脚本      
         run: python nodeseek_sign.py
-      - name: 运行FD签到脚本
+      - name: 运行DF签到脚本
         run: python deepflood_sign.py
         
