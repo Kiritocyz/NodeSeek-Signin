@@ -1,4 +1,4 @@
-name: nodeseek鸡腿签到
+name: NS&DF签到
 
 on:
   push:
@@ -49,6 +49,7 @@ jobs:
           
           # Cookie配置
           NS_COOKIE: ${{ vars.NS_COOKIE || secrets.NS_COOKIE }}
+          DF_COOKIE: ${{ vars.DF_COOKIE || secrets.DF_COOKIE }}
           
           # 验证码配置
           SOLVER_TYPE: ${{ secrets.SOLVER_TYPE }}
@@ -63,4 +64,6 @@ jobs:
           TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
           TG_USER_ID: ${{ secrets.TG_USER_ID }}
           TG_THREAD_ID: ${{ secrets.TG_THREAD_ID }}
-        run: python nodeseek_sign.py
+        run: 
+          python nodeseek_sign.py
+          python deepflood_sign.py
